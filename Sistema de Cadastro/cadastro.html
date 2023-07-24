@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>inicio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body class="container"> 
+    <img src="https://www.qualitytechnology.com.br/wp-content/uploads/2021/04/Design-sem-nome-300x300.png" alt="">
+    <h1>Tela de Cadastro!</h1>
+    <form method="POST" action="{{url_for('cadastro')}}">
+        <input type="text" placeholder="usuario" name="usuario">
+        <input type="password" placeholder="senha" name="senha">
+        <input type="password" placeholder="confirmar senha" name="confirmar">
+        <button>cadastrar</button>
+        
+        
+    </form>
+    <a href="/loguin">loguin</a>
+    {%if erro %}
+       <h1>{{erro}}</h1>
+    {%endif%} 
+</body>
+</html>

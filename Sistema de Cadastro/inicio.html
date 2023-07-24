@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+   
+</head>
+<body class="container">
+    <img src="https://queridojeito.com/imagem/2023/06/tecnologia-e-gadgets-a-tecnologia-nao-e-boa-nem-ma-300x300.webp" alt="">
+    <nav>
+        <ul>
+          <li><strong>Olá {{usuario}}</strong></li>
+        </ul>
+        <ul>
+          
+          <li><a href="/logout" role="button">Sair</a></li>
+        </ul>
+      </nav>
+  
+    <form method="post" action="/add_tarefa">
+        <input type="text" name="nome" placeholder="nome">
+        <textarea placeholder="descricao" name="descricao"></textarea>
+        <button>Cadastrar Tarefa</button>]
+        
+    </form>
+
+    <table border="1">
+        <thead>
+            <th>id</th>
+            <th>nome</th>
+            <th>descricao</th>
+            <th>excluir</th>
+            <th>editar</th>
+        </thead>
+        <tbody>
+            {% for tarefa in tarefas:  %}
+            <tr>
+                <td>{{ tarefa[0] }}</td>
+                <td>{{ tarefa[1] }}</td>
+                <td>{{ tarefa[2] }}</td>
+                <td><a role="button" class="outline" href="{{url_for('excluir_tarefa', id=tarefa[0])}}">excluir</a></td>
+                <td><a role="button" class="outline" href="{{url_for('editar_tarefa', id=tarefa[0])}}">Editar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+<img src="https://www.tecnoset.com.br/wp-content/uploads/2019/01/original-5c134a6326db16e46f81d5adca341559-1200x675.jpg" alt="">
+</html>

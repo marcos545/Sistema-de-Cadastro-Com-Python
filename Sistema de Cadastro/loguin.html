@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loguin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+    <form method="post" action="{{url_for('loguin')}}">
+        <input type="text" placeholder="usaurio" name="usuario">
+        <input type="password" placeholder="senha" name="senha">
+        <button>Logar</button>
+
+    </form>
+    <a href="/cadastro">cadastre-se</a>
+    {%if erro: %}
+        <h1>{{erro}}</h1>
+    {%%endif}
+    
+</body>
+</html>
